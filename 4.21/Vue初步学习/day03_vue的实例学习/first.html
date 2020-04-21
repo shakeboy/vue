@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="div" v-on:click="speakEnglish">我想离开这个世界,{{son.name}}</div>
+		
+		<script>
+			/* 基本的vue定义,以及变量的实现,函数的定义 */
+			var son = {
+				name:"小钊",
+				age:0
+			}
+			Object.freeze(son)
+			var v = new Vue({
+				el:"#div",
+				data:{
+					name:"石义钊",
+					age:21,
+					son,
+					a:4
+				},
+				methods:{
+					speakEnglish:function(){
+						alert("I am a Chinese");
+					}
+				}
+			});
+			/* 监察函数,会产生回调 */
+			v.$watch('a', function (newValue, oldValue) {
+			  // 这个回调将在 `v.a` 改变后调用
+			  alert("我是{{a}}"+v.a);
+			})
+		</script>
+	</body>
+</html>

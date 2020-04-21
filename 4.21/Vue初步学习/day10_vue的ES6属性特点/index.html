@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button type="button">按钮1</button>
+		<button type="button">按钮2</button>
+		<button type="button">按钮3</button>
+		<button type="button">按钮4</button>
+		<button type="button">按钮5</button>
+		<button type="button">按钮6</button><br>
+		
+		<button type="button">按钮1</button>
+		<button type="button">按钮2</button>
+		<button type="button">按钮3</button>
+		<button type="button">按钮4</button>
+		<button type="button">按钮5</button>
+		<button type="button">按钮6</button>
+		<script>
+			// // 块级作用域
+			// {
+			// 	var a =4;
+			// }
+			// var b = 5;
+			// console.log(a+b);
+			// // 没有块级作用域引起的问题
+			// if(true){
+			// 	var name = '块级作用域'
+			// }
+			// console.log(name);
+			
+			let btns = document.getElementsByTagName("button");
+			console.log(btns);
+			// for(let i = 0;i<btns.length;i++){
+			// 	btns[i].onclick = function(){
+			// 		console.log("第"+i+"按钮被执行");
+			// 	};
+			// }
+			//用let时有自己的作用域 ES6
+			for(var i = 6;i<btns.length;i++){
+				//闭包，函数是由作用域的，传进去的只是形参，真实值不会改变
+				(function(i){
+					btns[i].addEventListener('click',function(){
+						console.log("第"+i+"按钮被执行");
+					})
+				})(i)
+			}
+			//ES5要用闭包，是对作用域的集中体现
+			var name="吴可欣";
+			(function(name){
+				name = "石义钊";
+				console.log(name);
+			})()
+			console.log(name);
+		</script>
+	</body>
+</html>

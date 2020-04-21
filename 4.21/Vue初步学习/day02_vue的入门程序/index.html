@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		Hello World
+		<div id="firstvue">
+		  <p>{{ foo }}</p>
+		  <!-- 这里的 `foo` 会更新！ -->
+		  <button v-on:click="foo = 'baz'">{{changeit}}</button>
+		</div>
+		<!-- 创建第一个vue应用 -->
+		<div id="firstvue">
+			{{message}}<br>
+			{{name}}
+		</div>
+		
+		<script type="text/javascript">
+			//创建一个vue实例对象，接收vue的所有属性跟方法
+			var app = new Vue({
+				el:'#firstvue',//用于挂在要管理的元素
+				data:{
+					message:"Hello Vue!",
+					name:"石义钊",
+					foo:"foo hello",
+					changeit:"Change it on"
+				}
+			});
+		</script>
+		
+		<!-- 
+		 编程范式
+			js:命令式编程
+			vue:声明式编程=====响应式框架
+		 
+		 -->
+	</body>
+	
+	
+</html>

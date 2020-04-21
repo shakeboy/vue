@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue条件</title>
+		<script src="js/vue.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div v-if="flag" id="top">i love you</div>
+		//在控制台输入v.flag=true时就会出现
+		
+		<script>
+			var v = new Vue({
+				el:"#top",
+				data:{
+					flag:false,
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="div">
+			{{message}},白痴 <br/>
+			{{name}}<br/>
+			{{time}}<br/>
+			<h2 v-text="message">白痴</h2> 
+			<!-- bu==不够灵活 -->
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				var v = new Vue({
+					el:"#div",
+					data:{
+						message:"我是学习前端框架的高手哦",
+						name:"shakeboy",
+						time:new Date()
+					}
+				})
+			</script>
+			
+	</body>
+</html>

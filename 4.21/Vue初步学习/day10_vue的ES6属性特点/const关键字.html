@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			// 优先使用const,只有需要改变某一个标识符的时候才使用let
+			const str = "石义钊"
+			console.log(str);
+			//1.常量不能更改
+			// str = "ssss";
+			// Uncaught TypeError: Assignment to constant variable.
+			// at const关键字.html:13
+			
+			//2.必须赋值
+			// const s;
+			//3.对象内存地址，可以改变对象内部的属性
+			const person = {
+				name:"石义钊",
+				age:21
+			};
+			console.log(person);
+			person.name="谭松韵";
+			person.age=30;
+			console.log(person);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+	<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<title></title>
+</head>
+<body>
+	<!-- 双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令： -->
+	<div id="html">{{html}}{{a}}</div><br>
+	<div v-html="html">{{html}}</div>  //不会解析vue数据，双大括号失效
+	<p>Using v-html directive: <span v-html="html"></span></p>
+	
+	<script type="text/javascript">
+		var v = new Vue({
+			el:"#html",
+			data:{
+				a:45,
+				html:'<a href="http://www.baidu.com">百度</a>',
+			}
+		});
+	</script>
+	<!-- 这个 span 的内容将会被替换成为属性值 rawHtml，直接作为 HTML——会忽略解析
+	属性值中的数据绑定。注意，你不能使用 v-html 来复合局部模板，因为 Vue 不是基于
+	字符串的模板引擎。反之，对于用户界面 (UI)，组件更适合作为可重用和可组合的基本单位。 -->
+</body>
+</html>

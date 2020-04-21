@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<div id="div">
+			<!-- 1.带不带括号均可调用函数 -->
+			<button @click="btnclick">按钮一</button>
+			<button @click="btnclick()">按钮二</button>
+			
+			<!-- 2.在时间默认定义需要传参时，省略了小括号，就会传一个event对象 -->
+			<!-- <button @click="btnclick1('传参的石义钊')">按钮三</button> -->
+			<button @click="btnclick1">按钮四</button>
+			
+			<!--3. 带参数 -->
+			<button @click="btnclick2(a,b)">按钮五</button>
+
+		</div>
+		<script type="text/javascript">
+			var v = new Vue({
+				el: "#div",
+				data: {
+					a:4,
+					b:5
+				},
+				methods: {
+					btnclick: function() {
+						console.log();
+					},
+					btnclick1:function(){
+						console.log();
+					},
+					btnclick1: function(str) {
+						console.log(str);
+					},
+					btnclick2:function(a,b){
+						console.log(a+b);
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

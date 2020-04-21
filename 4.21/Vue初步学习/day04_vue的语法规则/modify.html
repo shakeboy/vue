@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<title></title>
+</head>
+<body>
+	
+	<div id="div" v-on:focus.prevent="alert('等下回调')">回调函数的应用
+	
+		<div>
+		<a href="www.baidu.com" target="_blank" v-on:click.prevent>百度一下就入坑</a>
+	</div>
+	        
+	</div>	
+	<script type="text/javascript">
+		var v = new Vue({
+			el:"#div",
+			data:{
+				on: {
+				    click: function($event) {
+				      $event.preventDefault()
+				    }
+				}
+			}
+		})
+	</script>
+</body>
+</html>

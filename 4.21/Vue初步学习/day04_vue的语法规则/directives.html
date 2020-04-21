@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<title></title>
+</head>
+<body>
+	<!-- 指令 (Directives) 是带有 v- 前缀的特殊 attribute。指令 attribute 的值
+	预期是单个 JavaScript 表达式 (v-for 是例外情况，稍后我们再讨论)。指令的职责是，
+	当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。回顾我们在介绍中看到的例子： -->
+	<div id="div">
+		<p v-if="seen">现在你看到我了</p>
+	</div>
+	<!-- 这里，v-if 指令将根据表达式 seen 的值的真假来插入/移除 <p> 元素。 -->
+	<script type="text/javascript">
+		var v = new Vue({
+			el:"#div",
+			data:{
+				seen:true
+			}
+		});
+	</script>
+</body>
+</html>

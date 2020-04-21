@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div id="div">
+			{{message}},白痴 <br/>
+			{{name}}<br/>
+			{{time}}<br/>
+			<h2 v-text="message" onclick="alert('我不是白痴')" v-on:click="alert">白痴</h2> 
+			<!-- bu==不够灵活 -->
+		</div>
+			<script type="text/javascript">
+				var v = new Vue({
+					el:"#div",
+					data:{
+						message:"我是学习前端框架的高手哦",
+						name:"shakeboy",
+						time:new Date()
+					},
+					methods:{
+						alert:function(){
+							alert("我就是白痴");
+						}
+					}
+				})
+			</script>
+			
+	</body>
+</html>

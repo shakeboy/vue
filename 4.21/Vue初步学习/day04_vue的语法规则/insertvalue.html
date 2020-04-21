@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="div">
+			{{message}} <br/>
+			{{name}}<br/>
+			{{time}}<br/>我要去吃饭<br/>
+			我已经{{age}}{{sex}}岁了<br>
+			我已经{{age+' '+sex}}岁了<br>
+			
+			<!-- Mustache不仅可以插入一些值，还可以写简单的表达式 -->
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				var v = new Vue({
+					el:"#div",
+					data:{
+						message:"我是学习前端框架的高手哦",
+						name:"shakeboy",
+						time:new Date(),
+						age:21,
+						sex:"男"
+					},
+				});
+			</script>
+			
+	</body>
+</html>

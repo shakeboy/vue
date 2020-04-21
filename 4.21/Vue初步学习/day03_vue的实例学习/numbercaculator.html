@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div id=numberCacul>
+			当前数值：{{number}}
+			<!-- <button type="button" v-on:click="number++">+</button>
+			<button type="button" v-on:click="number--">-</button> -->
+			<button type="button" v-on:click="addOne">+</button>
+			<button type="button" v-on:click="minusOne">-</button>
+		</div>
+		
+		<!-- 语法糖
+			v-on:@
+			v-bind: :
+		 
+		 -->
+		<script type="text/javascript">
+			var v = new Vue({
+				el:"#numberCacul",
+				data:{
+					number:0
+				},
+				methods:{
+					addOne:function(){
+						this.number++;
+						console.log("number++")
+					},
+					minusOne:function(){
+						this.number--;
+						console.log("number--")			
+					}
+				
+				}
+			})
+		</script>
+	</body>
+</html>

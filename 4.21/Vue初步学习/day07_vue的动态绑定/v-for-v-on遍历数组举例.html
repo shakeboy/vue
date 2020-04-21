@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.active{
+				background-color:"bblueviolet";
+			}
+		</style>
+	</head>
+	<body>
+		<!-- https://juejin.im/post/5ad6d73e518825556e5e9d09 -->
+		<!-- 点击列表中某一项变红 -->
+		<div id="list">
+			{{message}}<br/>
+			<ul>
+				<li v-for="(p,index) in persons" @click="changeColor(p)" 
+				:class="{active:isActivity}" :style="{color:color}">{{p.name}}{{index}}</li>
+			</ul>
+			<hr>
+			<ul>
+				<li v-for="p in persons">{{p}}</li>
+			</ul>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var v = new Vue({
+				el:"#list",
+				data:{
+					color:"red",
+					message:"数组遍历实现动态效果",
+					isActivity:false,
+					persons:[
+						{name:'石义钊',isActivity:false},
+						{name:'吴可欣',isActivity:false},
+						{name:'画成',isActivity:false},
+						],
+				},
+				methods:{
+					changeColor:function(ev){
+						for(let i in v.persons){
+							i.isActivity=false;
+						}
+						ev.isActivity = !ev.isActivity;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

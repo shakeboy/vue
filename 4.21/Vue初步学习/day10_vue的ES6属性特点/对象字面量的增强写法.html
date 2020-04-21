@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			const name = "刘鑫";
+			const age = 21;
+			const p = new Object();
+			const obj = {
+				name:"石义钊",
+				age:22,
+				run:function(){
+					console.log("running in the pool");
+				}
+			}
+			//1.属性增强写法 （ES5）
+			const obj0 = {
+				name:name,
+				age:age,
+				run:function(){
+					console.log("ES5属性增强写法");
+				}
+			}
+			console.log(obj0);
+			//2.ES6增强写法
+			const obj1={
+				name,
+				age,
+				obj,
+				run(){
+					console.log("我是ES6");
+				}
+			};
+			console.log(obj1)
+		</script>
+	</body>
+</html>

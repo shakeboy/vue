@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="div" v-on:click="speakEnglish">我想离开这个世界</div>
+		
+		<script>
+			var v = new Vue({
+				el:"#div",
+				data:{
+					a:1
+				},
+				methods:{
+					speakEnglish:function(){
+						alert("说英语");
+					}
+				},
+				beforeCreate() {
+					console.log("vue创建之前")
+				},
+				created() {
+					console.log("vue开始创建")
+					alert(this.a+"vue开始创建")
+				},
+				beforeMount() {
+					console.log("vue挂载之前")
+				},
+				mounted() {
+					console.log("vue开始挂载");
+					alert(this.a+"vue开始挂载")
+				},
+				beforeUpdate() {
+					console.log("vue更新之前")
+				},
+				updated() {
+					console.log("vue正在更新")
+				},
+				beforeDestroy() {
+					console.log("vue摧毁之前")
+					alert(this.a+"vue摧毁之前")
+				},
+				destroyed() {
+					//下面的代码不会执行了,因为vue在这个时候已经被摧毁了
+					console.log("vue已经被摧毁");
+					// alert(this.a+"vue正在摧毁")
+					alert("vue已经被摧毁")
+				},
+				
+			})
+		</script>
+	</body>
+</html>

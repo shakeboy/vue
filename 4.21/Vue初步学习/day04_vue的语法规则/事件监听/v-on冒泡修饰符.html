@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app" v-on:click="divprint">
+			
+			<!-- 1.@click.stop修饰符停止冒泡 -->
+			<button type="button" @click.stop="print">按钮</button>
+			<!-- 2.   .prevent 阻止默认提交-->
+			<form action="" method="post">
+				<input type="text">
+				<input type="submit" @click.prevent="submitClick" value="提交"/>
+			</form>
+			<!-- 3.监听所有键帽的点击 keyup抬起按键-->
+			<input type="text" name="" id="" value="" @keyup.enter="keyup"/>
+			<input type="text" name="" id="" value="" @keyup.ctrl="keyup"/>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				methods:{
+					print:function(){
+						console.log("我是按钮");
+					},
+					divprint:function(){
+						console.log("我是div");
+					},
+					submitClick:function(){
+						console.log("submit")
+					},
+					keyup:function(){
+						console.log("监听键帽")
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

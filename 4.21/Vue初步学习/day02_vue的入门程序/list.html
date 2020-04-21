@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div id="list">
+			<div>{{frameworks}}</div>
+			<ul>
+				<li>{{frameworks[0]}}</li>
+				<li>{{frameworks[1]}}</li>
+				<li>{{frameworks[2]}}</li>
+				<li>{{frameworks[3]}}</li>
+			</ul>
+			<ul>
+				<li v-for="li in frameworks">{{li}}</li>
+			</ul>
+			<ul>
+				<li v-for="p in persons">名字：{{p.name}}&nbsp;年龄：{{p.age}}&nbsp;性别：{{p.sex}}</li>
+			</ul>
+		</div>
+		
+		<script>
+			var v = new Vue({
+				el:"#list",
+				data:{1
+					greeting:"流行框架Vue的世界",
+					frameworks:[
+						'Angular','Vue','React','Webpack'
+					],
+					persons:{
+						p:{name:"石义钊",age:22,sex:"男"},
+						p:{name:"石义钊",age:22,sex:"男"},
+						p:{name:"石义钊",age:22,sex:"男"},
+						p:{name:"石义钊",age:22,sex:"男"},
+						
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

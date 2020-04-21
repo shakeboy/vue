@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 动态绑定：v-bind -->
+		<div id="app">
+			<h2>{{firstName+" "+lastName}}</h2>
+			<h2>{{firstName}} {{lastName}}</h2>
+			<h2>{{fullName}}</h2>
+			<h2>{{getFullName()}}</h2>
+			<h2>{{totalPrice}}</h2>
+		</div>
+
+		<!-- 语法糖==》v-bind=====: -->
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					firstName: "shakeboy",
+					lastName: "shakeboy",
+					books: [{
+							id: 1,
+							name: "syz",
+							price: 456
+						},
+						{
+							id: 1,
+							name: "syz",
+							price: 152
+						},
+						{
+							id: 1,
+							name: "syz",
+							price: 523
+						},
+						{
+							id: 1,
+							name: "syz",
+							price: 222
+						},
+						{
+							id: 1,
+							name: "syz",
+							price: 25
+						},
+						{
+							id: 1,
+							name: "syz",
+							price: 589
+						},
+					]
+				},
+				// 计算属性
+				computed: {
+					// fullName: function() {
+					// 	console.log(this.books[0].price);
+					// 	return this.firstName + ' ' + this.lastName
+					// },
+					totalPrice: function() {
+						// ES6，计算属性，reduce......
+						console.log(this.books[0].price);
+						var total = 0;
+						// return this.books.reduce()
+						for (let i = 0; i < this.books.length; i++) {
+							total += this.books[i].price;
+							console.log(total)
+						}
+						return total;
+					},
+					fullName:{
+						//计算属性一般没有set方法，只读，可与省略
+						get:function(){
+							return this.firstName+" "+this.lastName
+						},
+						set:function(newValue){
+							console.log("-----"+newValue);
+							names = newValue.split(" ");
+							this.firstName = names[0];
+							this.lastName = names[1];
+						}
+					}
+				},
+				methods: {
+					getFullName: function() {
+						return this.firstName + " " + this.lastName
+					},
+				},
+
+			});
+		</script>
+	</body>
+</html>
