@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<li v-for="item in items">{{item}}</li>
+			<button type="button" @click="btnClick">添加多个pop</button>
+			<button type="button" @click="btnClick1">删除多个pop</button>
+			<button type="button" @click="btnClick2">添加一个push</button>			
+			<button type="button" @click="btnClick3">添加多个unshift</button>
+			<button type="button" @click="btnClick4">splice删除</button>		
+			<button type="button" @click="btnClick5">splice替换</button>
+			
+		</div>
+<script type="text/javascript">
+		<!-- push可以做到响应式 -->
+		<!-- 响应式
+//			 1.pop() 删除数组中的最后一个元素
+//			 2.shift() 删除数组中的第一个元素   ...可变参数
+//		 3.unshift()在数组最前面添加元素
+//			 4.splice()可以删除，可以插入，可以替换
+			// 第一个元素：开始索引
+			// 第二个参数：要删除几个元素
+			// 第三个参数：增加的元素
+		 -->
+		<!-- 可变参数 -->
+		
+		
+		<!-- 通过数组索引值不是响应式的 -->
+		
+
+	function myf(...num){
+		
+	}
+	myf(1,2,3,5,6,9,9,8,9,9,9,9,9)
+</script>
+		<script type="text/javascript">
+			var v = new Vue({
+				el: "#app",
+				data: {
+					items: ['石义钊', '吴可欣']
+				},
+				methods: {
+					btnClick() {
+						for (let i = 0; i < 4; i++) {
+							this.items.push("离心")
+						}
+					},
+					btnClick1() {
+						for (let i = 0; i < 4; i++) {
+							this.items.pop()
+						}
+					},
+					btnClick2() {
+							this.items.push("我是push过来的")		
+					},
+					btnClick3() {
+						this.items.unshift("我是添加的")
+					},
+					
+					btnClick4() {
+							this.items.splice(2,0,"shakeboy")
+						
+					},
+					btnClick5() {
+							this.items.splice(1,2,"shakeboy","flower")
+						
+					},
+					
+					
+					
+				},
+			});
+			
+		</script>
+	</body>
+</html>

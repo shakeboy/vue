@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding:0;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 1.遍历 -->
+			<ul>
+				<li v-for="item in prods">{{item}}</li>
+			</ul>
+			<!-- 2.索引 index-value-->
+			<ul>
+				<li v-for="(item,index) in prods">{{index+1}}.{{item}}</li>
+			</ul>
+			<!-- 3.对象k-v -->
+			<ul>
+				<li v-for="(item,index) in person">{{index+1}}.{{item}}</li> <br>
+				<li v-for="(item,index) in person">{{index}}:{{item}}</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var v = new Vue({
+				el:"#app",
+				data:{
+					prods:[
+						'苹果','梨子','香蕉'
+					],
+					// 插值:v.prods.splice(1,0,"西瓜")
+					person:{
+						name:"shiyizhao",
+						age:21,
+						sex:"男"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

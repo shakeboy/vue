@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		
+		<div id="app">
+			<h2 v-if="isXia">我是个皮皮虾</h2>
+			<h2 v-else-if="isDog">我是个狗蛋</h2>
+			<h2 v-else-if="isPerson">我是小泥人</h2>
+			<h2 v-else>我什么都不是</h2>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var app =new Vue({
+				el:"#app",
+				data:{
+					isXia:false,
+					isDog:false,
+					isPerson:false,
+		
+				}
+			})
+		</script>
+	</body>
+</html>

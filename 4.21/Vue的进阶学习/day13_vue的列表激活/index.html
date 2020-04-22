@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.active{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(course,index) in courses" @click="changeBg(index)" :class="{active:isActived}">{{course}}</li>
+			</ul>
+				</div>
+		<script type="text/javascript">
+			var v = new Vue({
+				el:"#app",
+				data:{
+					courses:['计算机科学技术','操作系统','编译原理','Linux内核编程']
+				},
+				methods:{
+						changeBg:function(index){
+							this.isActived()
+						},
+						isActived:function(index){
+							return true;
+						}
+				}
+			})
+		</script>
+		
+	</body>
+</html>

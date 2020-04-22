@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2 v-if="isShow">
+				我是个皮皮虾
+			</h2>
+			<h2 v-else>
+				我是个狗蛋
+			</h2>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var app =new Vue({
+				el:"#app",
+				data:{
+					isShow:false,
+				}
+			})
+		</script>
+	</body>
+</html>

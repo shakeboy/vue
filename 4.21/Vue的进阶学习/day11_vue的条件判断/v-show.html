@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- display:none -->
+		<span v-show="isShow" id="app">刚刚我躲起来了</span>
+		
+		<script type="text/javascript">
+			var v = new Vue({
+				el:"#app",
+				data:{
+					isShow:false,
+				}
+			})
+		</script>
+	</body>
+</html>
